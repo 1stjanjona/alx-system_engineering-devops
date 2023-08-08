@@ -1,2 +1,2 @@
 #!/bin/bash
-sed -e 's/\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\).*$/\1/' -e t -e d access.log | sort | uniq -c
+awk '{ print $1}' /var/log/http/access_log | sort | uniq -c | sort -nr | head -n 11
