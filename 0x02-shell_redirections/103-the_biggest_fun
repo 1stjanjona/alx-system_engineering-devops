@@ -1,2 +1,2 @@
 #!/bin/bash
-awk '{print $1}' | sort | uniq -c | sort -nr | head -n 11
+sudo cat | cut -d ' " ' -f11 | cut -d ' ' -f2 | sort | uniq -c | sort -rn
