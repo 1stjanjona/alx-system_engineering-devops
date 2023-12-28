@@ -5,6 +5,7 @@ for file in *
 do
 	if [ -f "$file" ] && [[ "$file" == *-* ]]
 	then
-		echo "${file#*-}"
+		IFS='-' read -ra parts <<< "$file"
+		echo "${parts[@]:1}"
 	fi
 done
