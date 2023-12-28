@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#  Bash script that displays numbers from 1 to 100
+for ((ndx=1; ndx<=100; ndx++))
+do
+	if ((ndx % 3 == 0)) && ((ndx % 5 == 0))
+	then
+		echo "FizzBuzz"
+	elif ((ndx % 3 == 0))
+	then
+		echo "Fizz"
+	elif ((ndx % 5 == 0))
+	then
+		echo "Buzz"
+	else
+		echo "$ndx"
+	fi
+done
