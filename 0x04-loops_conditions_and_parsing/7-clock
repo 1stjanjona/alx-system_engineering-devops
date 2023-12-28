@@ -10,4 +10,4 @@ while [ $hrs -le 12 ]; do
 		((mins++))
 	done
 	((hrs++))
-done | head -n 70
+done
