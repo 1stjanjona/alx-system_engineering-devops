@@ -12,14 +12,14 @@ def top_ten(subreddit):
     params = {
         "limit": 10
     }
-'''    response = requests.get(url, headers=headers, params=params,
+    response = requests.get(url, headers=headers, params=params,
                             allow_redirects=False)
     if response.status_code == 404:
         print("None")
         return
     results = response.json().get("data")
-    [print(c.get("data").get("title")) for c in results.get("children")]'''
-
+    [print(c.get("data").get("title")) for c in results.get("children")]
+'''
     try:
         response = requests.get(url, headers=headers, params=params, allow_redirects=False)
         if response.status_code == 404:
@@ -35,4 +35,4 @@ def top_ten(subreddit):
             print(c.get("data", {}).get("title", "None"))
     except requests.RequestException as e:
         print("None")
-        return
+        return'''
