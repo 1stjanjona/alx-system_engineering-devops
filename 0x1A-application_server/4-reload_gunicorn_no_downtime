@@ -1,0 +1,10 @@
+ter Gunicorn process ID
+GUNICORN_PID=$(ps aux | grep 'gunicorn' | grep 'master' | awk '{print $2}')
+
+# Send the HUP signal to the Gunicorn master process to gracefully reload
+if [ -n "$GUNICORN_PID" ]; then
+    kill -HUP $GUNICORN_PID
+    echo "Sent HUP signal to Gunicorn master process (PID: $GUNICORN_PID) for graceful reload."
+else
+    echo "Gunicorn master process not found."
+fi
